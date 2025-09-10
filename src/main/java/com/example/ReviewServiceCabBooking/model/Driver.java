@@ -1,8 +1,7 @@
 package com.example.ReviewServiceCabBooking.model;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.OneToMany;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import jakarta.persistence.*;
 import lombok.*;
 
 import java.util.ArrayList;
@@ -23,6 +22,7 @@ public class Driver extends BaseModel{
     private String licenseNumber;
 
     // Driver : Booking --> one to many
-    @OneToMany(mappedBy = "driver")
-    private List<Booking> bookings = new ArrayList<>();
+    @OneToMany(mappedBy = "driver",cascade ={CascadeType.PERSIST,CascadeType.MERGE},fetch = FetchType.LAZY)
+    @JsonIgnore
+    private List<Booking> bookings;
 }

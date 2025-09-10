@@ -1,7 +1,7 @@
 package com.example.ReviewServiceCabBooking.model;
 
 public enum BookingStatus {
-    SCHEDULE,
+    CONFIRMED,
     CANCELLED,
     CAB_ARRIVED,
     ASSIGNING_DRIVER,

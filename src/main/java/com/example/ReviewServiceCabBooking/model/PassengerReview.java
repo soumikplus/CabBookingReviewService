@@ -8,7 +8,7 @@ import lombok.Setter;
 @Getter
 @Setter
 public class PassengerReview extends Review{
-    @Column(nullable = false)
+    @Column(nullable = false,columnDefinition = "TEXT")
     private String passengerReviewContent;
 
     @Column(nullable = false)
